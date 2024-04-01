@@ -1,6 +1,6 @@
 package com.gidas.capneebe.security.service.impl;
 
-import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
+
 import com.gidas.capneebe.global.exceptions.customs.BadCredentialsException;
 import com.gidas.capneebe.security.dtos.response.LoginResponseDTO;
 import com.gidas.capneebe.security.jwt.JwtIssuer;
