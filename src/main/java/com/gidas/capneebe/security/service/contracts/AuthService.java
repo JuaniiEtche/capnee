@@ -6,4 +6,6 @@ import javax.security.auth.login.LoginException;
 
 public interface AuthService {
     LoginResponseDTO attemptUserPasswordLogin(String user, String password) throws LoginException;
+
+    LoginResponseDTO attemptFaceLogin(String faceImage);
 }

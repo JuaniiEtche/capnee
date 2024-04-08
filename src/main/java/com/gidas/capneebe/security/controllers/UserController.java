@@ -43,12 +43,12 @@ public class UserController extends SwaggerResponseCode {
     @GetMapping("/get-by-id")
     @Operation(summary = "Get User", description = "Retrieve a user by its ID")
     public ResponseEntity<UserResponseDTO> getUser(@RequestParam long id) {
-        return ResponseEntity.ok(userService.getUser(id));
+        return ResponseEntity.ok(userService.getUsuario(id));
     }
     @GetMapping("/get-all")
     @Operation(summary = "Get Users", description = "Retrieve all users")
     public ResponseEntity<List<UserResponseDTO>> getUsers() {
-        return ResponseEntity.ok(userService.getUsers());
+        return ResponseEntity.ok(userService.getUsuario());
     }
 
     @DeleteMapping("/delete-by-id")

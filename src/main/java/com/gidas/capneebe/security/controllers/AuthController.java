@@ -1,5 +1,6 @@
 package com.gidas.capneebe.security.controllers;
 
+import com.gidas.capneebe.security.dtos.request.LoginFaceRequestDTO;
 import com.gidas.capneebe.security.dtos.request.LoginRequestDTO;
 import com.gidas.capneebe.security.dtos.response.LoginResponseDTO;
 import com.gidas.capneebe.security.service.contracts.AuthService;
@@ -31,5 +32,11 @@ public class AuthController {
     @Operation(description = "Login with user and password.", summary = "Login with user and password")
     public ResponseEntity<LoginResponseDTO> loginUser(@RequestBody LoginRequestDTO userLoginRequestDTO) throws LoginException {
         return new ResponseEntity<>(authService.attemptUserPasswordLogin(userLoginRequestDTO.getUser(), userLoginRequestDTO.getPassword()), HttpStatus.OK);
+    }
+
+    @PostMapping("/login/face")
+    @Operation(description = "Login with face", summary = "Login with face")
+    public ResponseEntity<LoginResponseDTO> loginUserFace(@RequestBody LoginFaceRequestDTO userLoginRequestDTO) throws LoginException {
+        return new ResponseEntity<>(authService.attemptFaceLogin(userLoginRequestDTO.getFaceImage()), HttpStatus.OK);
     }
 }

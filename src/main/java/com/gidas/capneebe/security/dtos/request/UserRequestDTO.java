@@ -2,6 +2,8 @@ package com.gidas.capneebe.security.dtos.request;
 
 import lombok.*;
 
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -20,4 +22,6 @@ public class UserRequestDTO {
     private String password;
 
     private long fileNumber;
+
+    private List<String> images;
 }

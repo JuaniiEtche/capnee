@@ -10,9 +10,9 @@ import java.util.List;
 
 public interface UserService {
 
-    List<UserResponseDTO> getUsers();
+    List<UserResponseDTO> getUsuario();
 
-    UserResponseDTO getUser(long id);
+    UserResponseDTO getUsuario(long id);
 
     StatusResponseDTO addUser(UserRequestDTO UserCompany);
 

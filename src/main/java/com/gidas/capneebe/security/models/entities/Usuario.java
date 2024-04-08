@@ -2,8 +2,6 @@ package com.gidas.capneebe.security.models.entities;
 
 import com.gidas.capneebe.global.enums.Rol;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,13 +15,13 @@ import java.sql.Timestamp;
 
 @Data
 @Entity
-@Table(name = "user")
-@SQLDelete(sql = "UPDATE user SET deleted_at = current_timestamp() WHERE id=?")
+@Table(name = "usuario")
+@SQLDelete(sql = "UPDATE usuario SET deleted_at = current_timestamp() WHERE id=?")
 @Where(clause = "deleted_at IS NULL")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class User {
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,22 +29,22 @@ public class User {
     private long id;
 
     @Column(length = 45, nullable = false)
-    private String user;
+    private String usuario;
 
     @Column(length = 45, nullable = false)
-    private String firstName;
+    private String nombre;
 
     @Column(length = 45, nullable = false)
-    private String lastName;
+    private String apellido;
 
     @Column(length = 45, nullable = false)
-    private long fileNumber;
+    private long legajo;
 
     @Enumerated(EnumType.STRING)
     private Rol rol;
 
     @Column(length = 300, nullable = false)
-    private String password;
+    private String contraseña;
 
     @Column(updatable = false)
     @CreationTimestamp
@@ -58,7 +56,7 @@ public class User {
     private Timestamp deletedAt;
 
     public String getFullName() {
-        return lastName + ", " + firstName;
+        return nombre + ", " + apellido;
     }
 
 }
