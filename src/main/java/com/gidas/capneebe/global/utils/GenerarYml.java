@@ -1,11 +1,6 @@
 package com.gidas.capneebe.global.utils;
 import com.gidas.capneebe.api.models.entities.CaracteristicasFaciales;
-import com.gidas.capneebe.api.models.repositories.CaracteristicasFacialesRepository;
-import jdk.swing.interop.SwingInterOpUtils;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.Yaml;
 import java.io.FileWriter;
